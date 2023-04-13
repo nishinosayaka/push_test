@@ -5,25 +5,44 @@ public class Curriculum_New_1_4 {
 	
 	public static void main(String[] args) {
 //		Q1.下記9個をクラス変数として宣言のみしてください
+		//バイト型
+		byte b;
+		//短整数型
+		short s;
+		//整数型
+		int i;
+		//長整数型
+		long l;
+		//単精度浮動小数点数型
+		float f;
+		//倍精度浮動小数点数型
+		double d;	
+		//文字型
+		char c;
+		//文字列型
+		String str;
+		//ブーリアン型 
+		boolean boo;
+
 //		Q2 それぞれのクラス変数をローカル内でそれぞれの初期値を代入し初期化してください
 		//バイト型
-		byte b= 0 ;
+		b= 0 ;
 		//短整数型
-		short s = 0;
+		s = 0;
 		//整数型
-		int i = 0;
+		i = 0;
 		//長整数型
-		long l = 0;
+		l = 0;
 		//単精度浮動小数点数型
-		float f = 0.0f;
+		f = 0.0f;
 		//倍精度浮動小数点数型
-		double d = 0.0d;	
+		d = 0.0d;	
 		//文字型
-		char c = '\u0000';
+		c = '\u0000';
 		//文字列型
-		String str = null;
+		str = null;
 		//ブーリアン型 
-		boolean boo = false;
+		boo = false;
 		
 //		Q3初期化をしたそれぞれの変数に下記の値を代入してください
 	     // ・バイト型                 10
