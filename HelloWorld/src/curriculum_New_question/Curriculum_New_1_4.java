@@ -75,8 +75,5 @@ public class Curriculum_New_1_4 {
  		int num1 = 23;
  		System.out.println("ハローJAVA" + (num + num1));
  		 
- 		
-		
-		
 	}
 }
