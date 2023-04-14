@@ -1,29 +1,28 @@
 package curriculum_New_question;
 
 public class Curriculum_New_1_4 {
-
+//	Q1.下記9個をクラス変数として宣言のみしてください
+	//バイト型
+	static byte b;
+	//短整数型
+	static short s;
+	//整数型
+	static int i;
+	//長整数型
+	static long l;
+	//単精度浮動小数点数型
+	static float f;
+	//倍精度浮動小数点数型
+	static double d;	
+	//文字型
+	static char c;
+	//文字列型
+	static String str;
+	//ブーリアン型 
+	static boolean boo;
+	
 	
 	public static void main(String[] args) {
-//		Q1.下記9個をクラス変数として宣言のみしてください
-		//バイト型
-		byte b;
-		//短整数型
-		short s;
-		//整数型
-		int i;
-		//長整数型
-		long l;
-		//単精度浮動小数点数型
-		float f;
-		//倍精度浮動小数点数型
-		double d;	
-		//文字型
-		char c;
-		//文字列型
-		String str;
-		//ブーリアン型 
-		boolean boo;
-
 //		Q2 それぞれのクラス変数をローカル内でそれぞれの初期値を代入し初期化してください
 		//バイト型
 		b= 0 ;
