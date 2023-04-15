@@ -2,7 +2,7 @@ package curriculum_New_question;
 
 //Q1.下記9個をクラス変数として宣言のみしてください
 class test{
-//バイト型
+	//バイト型
 	public static byte b;
 	//短整数型
 	public static short s;
