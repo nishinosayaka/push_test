@@ -18,7 +18,7 @@ public class curriculum1_6 {
 		//	その後 x の値をコンソールに表示して下さい。
 		System.out.println(x);
 
-		//	問２）
+		//	問２） 
 		//	以下のプログラムを作成してください。
 		//	①int 型の変数 i に 100 を代入する。
 		i = 100;
