@@ -1,4 +1,4 @@
-package curriculum;
+package curriculum1_8;
 
 public class curriculum1_8 {
 
