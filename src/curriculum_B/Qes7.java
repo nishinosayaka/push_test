@@ -50,7 +50,7 @@ public class Qes7 {
 			double totalkyouka = sum1 / (double)people;
 			System.out.println(kamoku[j] + "の平均点は" + String.format("%.2f", (Math.floor(totalkyouka * 100)) / 100) + "点です。");
 		}
-
+		
 		// 全体の平均を計算して出力
 		// 全体の合計の変数を宣言し初期化
 		int sum2 = 0;

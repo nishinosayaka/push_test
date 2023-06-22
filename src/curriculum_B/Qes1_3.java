@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Qes1_3 {
-
+	
 	private static Scanner scn;
 
 	public static void main(String[] args) {
