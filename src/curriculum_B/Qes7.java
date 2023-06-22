@@ -4,93 +4,72 @@ import java.util.Scanner;
 
 public class Qes7 {
 
+	private static Scanner sc;
+
 	public static void main(String[] args) {
-		//  TODO 自動生成されたメソッド・スタブ
-		// キーボード入力をする
-		Scanner scn = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		System.out .print("生徒の人数を入力してください。(2以上):");
-		int people = scn.nextInt();
-		
-		// 改行
-		System.out.println();
-		
-		// 教科ごとに格納する配列の初期化
-		int[] total = new int[people] ;
-		int[] totalen = new int[people];
-		int[] totalma = new int[people];
-		int[] totalsac = new int[people];
-		int[] totalsoc = new int[people];
-		
-		// 教科を変数宣言して初期化
-		int eng =0;
-		int math = 0;
-		int soc = 0;
-		int sac = 0;
-		int z = 0;
-		
-		// 格納した値の教科ごとの初期化
-		double sccoreen = 0;
-		double sccorema = 0;
-		double sccoresac =0;
-		double sccoresoc =0;
-		double sccoretotal =0;
-		
-		// peopleの人数分の教科をそれぞれ繰り返して入力を行う
-		for(int i = 1 ; i <= people ; i++) {
-				System.out.printf(i +"人目の『英語』の点数を入力してください。:");
-				eng = scn.nextInt();
-				System.out.printf( i +"人目の『数学』の点数を入力してください。:");
-				math = scn.nextInt();
-				System.out.printf(i +"人目の『理科』の点数を入力してください。:");
-				sac = scn.nextInt();
-				System.out.printf(i +"人目の『社会』の点数を入力してください。:");
-				soc = scn.nextInt();
-				System.out.print("\n");
-				
-				// 各教科ごとに入力した値を全て足した物を格納する（for文で繰り返すごとに０からpeopleの数まで格納させる）
-				total[i-1] = eng + math + sac + soc ;
-				
-				// 各教科ごとに入力した値を各教科ごとに配列に格納（for文で繰り返すごとに０からpeopleの数まで格納させる）
-				// i−１で０を指定して、配列に格納する場所は０から順番に格納させる
-				totalen[i-1] = eng;
-				totalma[i-1] = math;
-				totalsac[i-1] = sac;
-				totalsoc[i-1] = soc;
+		// 生徒の人数と、教科の数の変数を宣言し、それぞれ代入
+		int people = sc.nextInt(), kyouka = 4;
+		// 科目を配列させる
+		String kamoku[] = {"英語","数学","理科","社会"};
+		// [生徒の人数][4教科]を変数に代入
+		int[][] num = new int[people + 1][kyouka + 1];
+		System.out.print("\n");
+
+		// 教科ごとに点数を入力
+		for (int i = 0; i < people; i++) {
+			for (int j = 0; j < kyouka; j++) {
+				System.out.print((i + 1) + "人目の" + kamoku[j] + "の点数を入力してください。:");
+				num[i][j] = sc.nextInt();
+			}
 		}
-		// 一人分の平均点を出力を繰り返して出力
-		for ( double sccore : total ) {
-			z++;
-			double a = sccore / 4;
-			System.out.println( z +"人目の平均点は"+ String.format("%.2f",(Math.floor(a*100))/100) + "点です。");
+		System.out.print("\n");
+
+		//　列ごとに平均を計算して出力
+		for (int i = 0; i < people; i++) {
+			int sum = 0;
+			for (int j = 0; j < kyouka; j++) {
+				sum += (double)num[i][j];
+			}
+			num[i][kyouka] = sum;
+			double totalpeople = sum / (double)kyouka;
+			System.out.println((i + 1) + "人目の平均点は" + String.format("%.2f", (Math.floor(totalpeople * 100)) / 100) + "点です。");
 		}
-		// 改行
+		System.out.print("\n");
+
+		// 行ごとの合計の変数を宣言
+		int sum1 = 0;
+		//　行ごとに平均を計算して出力
+		for (int j = 0; j < kyouka; j++) {
+			sum1 = 0;
+			for (int i = 0; i < people; i++) {
+				sum1 += num[i][j];
+			}
+			num[people][j] = sum1;
+			double totalkyouka = sum1 / (double)people;
+			System.out.println(kamoku[j] + "の平均点は" + String.format("%.2f", (Math.floor(totalkyouka * 100)) / 100) + "点です。");
+		}
+
+		// 全体の平均を計算して出力
+		// 全体の合計の変数を宣言し初期化
+		int sum2 = 0;
+		//全体の合計値を割る数字を４教科×人数で計算し、変数に代入
+		double z = 4 * people;
+		//全体の平均値の変数を宣言し、初期化
+		double total = 0;
+		// 合計値を計算する
+		for (int j = 0; j <= kyouka; j++) {
+			sum2 = 0;
+			for (int i = 0; i < people; i++) {
+				sum2 += num[i][j];
+			}
+			num[people][j] = sum2;
+			total = sum2 / z;
+		}
+		System.out.println("全体の平均点は" + String.format("%.2f", (Math.floor(total * 100)) / 100) + "点です。");
 		System.out.print("\n");
 		
-		// 各教科ごとの平均値を処理
-		// 英語
-		for ( int b = 0; b < totalen.length ; b++ ) {
-			sccoreen += totalen[b];
-		}
-		System.out.println("英語の平均点は"+String.format("%.2f",(Math.floor(sccoreen/z*100))/100) + "点です。" );
-		// 数学
-		for ( int c = 0; c < totalma.length ; c++ ) {
-			sccorema += totalma[c];
-		}
-		System.out.println("数学の平均点は"+String.format("%.2f",(Math.floor(sccorema/z*100))/100) + "点です。" );
-		// 理科
-		for ( int d = 0; d < totalsac.length ; d++ ) {
-			sccoresac += totalsac[d];
-		}
-		System.out.println("理科の平均点は"+String.format("%.2f",(Math.floor(sccoresac/z*100))/100) + "点です。" );
-		// 社会
-		for ( int e = 0; e < totalsoc.length ; e++ ) {
-			sccoresoc += totalsoc[e];
-		}
-		System.out.println("社会の平均点は" + String.format("%.2f",(Math.floor(sccoresoc/z*100))/100) + "点です。" );
-		// 全体
-		for ( int f = 0; f < total.length ; f++ ) {
-			sccoretotal += total[f];
-		}
-		System.out.println("全体の平均点は" + String.format("%.2f",(Math.floor(sccoretotal/4/z*100))/100) + "点です。" );	
 	}
 }
+
