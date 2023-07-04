@@ -1,6 +1,6 @@
 package curriculum_B;
 import java.util.Random;
-import java.util.Scanner;
+import java.util.Scanner; 
 
 public class Qes1_3 {
 	
